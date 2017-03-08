@@ -24,7 +24,7 @@ EOF
 
 # Enable the Openstack repo
 apt install -y software-properties-common
-add-apt-repository cloud-archive:newton
+add-apt-repository -y cloud-archive:newton
 apt -y update && apt -y  dist-upgrade
 
 # Install Openstack-client
@@ -39,7 +39,7 @@ sed -i "s/sql_connection = sqlite:\/\/\/\/var\/lib\/barbican\/barbican.sqlite/sq
 
 sed -i "s/rabbit_userid=guest/rabbit_userid=$RABBIT_USER/g" /etc/barbican/barbican.conf
 sed -i "s/rabbit_password=guest/rabbit_password=$RABBIT_PASSWORD/g" /etc/barbican/barbican.conf
-sed -i "s/enable = False/enable = True/g" /etc/barbican/barbican.conf
+sed -i "0,/enable = False/s//enable = True/" /etc/barbican/barbican.conf
 
 # Upgrade Database
 barbican-manage db upgrade
