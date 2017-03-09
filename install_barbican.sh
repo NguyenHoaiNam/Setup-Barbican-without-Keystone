@@ -33,3 +33,18 @@ apt install python-openstackclient -y
 
 # Install package barbican-service
 apt-get -y install barbican-api barbican-keystone-listener barbican-worker
+
+# Change file barbican.conf
+sed -i "s/sql_connection = sqlite:\/\/\/\/var\/lib\/barbican\/barbican.sqlite/sql_connection = mysql+pymysql:\/\/barbican:$BARBICAN_PASSWORD@127.0.0.1\/barbican?charset=utf8/g" /etc/barbican/barbican.conf
+
+sed -i "s/rabbit_userid=guest/rabbit_userid=$RABBIT_USER/g" /etc/barbican/barbican.conf
+sed -i "s/rabbit_password=guest/rabbit_password=$RABBIT_PASSWORD/g" /etc/barbican/barbican.conf
+sed -i "s/enable = False/enable = True/g" /etc/barbican/barbican.conf
+
+# Upgrade Database
+barbican-manage db upgrade
+
+# Restart service
+/etc/init.d/apache2 restart
+/etc/init.d/barbican-keystone-listener restart
+/etc/init.d/barbican-worker restart
