@@ -23,13 +23,13 @@ FLUSH PRIVILEGES;
 EOF
 
 # Enable the Openstack repo
-apt install software-properties-common
+apt install -y software-properties-common
 add-apt-repository cloud-archive:newton
-apt update && apt dist-upgrade
+apt -y update && apt -y  dist-upgrade
 
 # Install Openstack-client
-apt install python-openstackclient
+apt install python-openstackclient -y
 
 
 # Install package barbican-service
-apt-get install barbican-api barbican-keystone-listener barbican-worker
+apt-get -y install barbican-api barbican-keystone-listener barbican-worker
