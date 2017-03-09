@@ -1,4 +1,4 @@
-#### As we are running Barbican without Keystone, so there will be some options added when running command
+#### As we are running Barbican without Keystone, so there will be some options added when running the commands
 
 ###### List secret
 
