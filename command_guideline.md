@@ -9,5 +9,5 @@ barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican  se
 ###### Store secret
 
 ```
-barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican  secret store -d "nguyen hoai nam"
+barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican  secret store -p "nguyen hoai nam"
 ```
