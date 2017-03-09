@@ -7,7 +7,7 @@
 #### Step 1: Clone this script
 
 ```
-git clone https://github.com/NguyenHoaiNam/
+git clone https://github.com/NguyenHoaiNam/Setup-Barbican-without-Keystone.git
 ```
 
 #### Step 2: Modify parameters
