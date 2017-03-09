@@ -9,8 +9,8 @@ rabbitmqctl set_permissions $RABBIT_USER ".*" ".*" ".*"
 
 
 # Step2: Install Mysql-server
-debconf-set-selections <<< 'mysql-server mysql-server/root_password password $DATABASE_PASSWORD'
-debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password $DATABASE_PASSWORD'
+echo mysql-server mysql-server/root_password password $DATABASE_PASSWORD | debconf-set-selections
+echo mysql-server mysql-server/root_password_again password $DATABASE_PASSWORD | debconf-set-selections
 apt-get -y install mysql-server
 
 # Install Barbican without Keystone
