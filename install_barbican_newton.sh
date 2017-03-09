@@ -30,8 +30,9 @@ apt install -y software-properties-common
 add-apt-repository -y cloud-archive:newton
 apt -y update && apt -y  dist-upgrade
 
-# Install Openstack-client
-apt install python-openstackclient -y
+# Install Openstack-client and Barbican-client
+apt -y install python-openstackclient
+apt -y install python-barbicanclient
 
 
 # Install package barbican-service
