@@ -1,3 +1,6 @@
+echo "Installing Barbican at Newton release"
+sleep 3
+
 source config.cfg
 # Step 0: Update Sever
 apt update && apt dist-upgrade
