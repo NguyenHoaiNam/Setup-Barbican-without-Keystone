@@ -18,7 +18,11 @@ barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican  se
 
 ###### Add alias
 ```
-echo "alias barbican='barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican'" >> ~/.bashrc
+echo "alias bbc='barbican --no-auth --endpoint http://localhost:9311 --os-project-id barbican'" >> ~/.bashrc
 ```
-After that, we can use the commands in Barbican as normally.
+After that, we can use the bbc comand instead of barbican. For example, to list secret:
+```
+bbc secret list
+```
+
 
